@@ -4,7 +4,7 @@
 
 const baseEndpoint = 'https://api.github.com';
 const usersEndpoint = `${baseEndpoint}/users`;
-const $n = document.querySelector('.name');
+const $n = document.querySelector('.name'); 
 const $b = document.querySelector('.blog');
 const $l = document.querySelector('.location');
 
@@ -19,7 +19,7 @@ function displayUser(username) {
       $l.innerText = `${data.location}`;
     }).catch((error)=>{
       handleError(error);
-    })
+    });
   }).catch((error)=>{
     handleError(error);
   });
