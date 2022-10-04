@@ -1,4 +1,4 @@
-//cambie elemento 2 a ed porque e es el evento, separe funciones dentro de otras , modifique funcion para que reciba el objeto a cual modificar 
+//cambie elemento 2 a ed porque e es el evento, separe funciones dentro de otras , modifique funcion para que reciba el objeto a cual modificar, cambie el evento submit a uno mas permamente 
 
 var formulario = document.querySelector("form")
 var n = formulario.elements[0]
@@ -53,9 +53,11 @@ function agregarInvitado(nombre, edad, nacionalidad) {
   else if (nacionalidad === "per") {
     nacionalidad = "Peruana"
   }
+
   var elementoLista = document.createElement("div")
+
   elementoLista.classList.add("elemento-lista")
-  lista.appendChild(elementoLista)
+  lista.append(elementoLista)
   crearElemento("Nombre", nombre, elementoLista)
   crearElemento("Edad", edad, elementoLista)
   crearElemento("Nacionalidad",nacionalidad, elementoLista)
@@ -63,21 +65,20 @@ function agregarInvitado(nombre, edad, nacionalidad) {
   botonBorrar.textContent = "Eliminar invitado"
   botonBorrar.id = "boton-borrar"
   var corteLinea = document.createElement("br")
-  elementoLista.appendChild(corteLinea)
-  elementoLista.appendChild(botonBorrar);
+  elementoLista.append(corteLinea)
+  elementoLista.append(botonBorrar);
   botonBorrar.onclick = function() {
   botonBorrar.parentNode.remove()
   }
 }
 
 function crearElemento(descripcion, valor , elementoLista) {
- 
   var spanNombre = document.createElement("span")
   var inputNombre = document.createElement("input")
   var espacio = document.createElement("br")
   spanNombre.textContent = descripcion + ": "
   inputNombre.value = valor 
-  elementoLista.appendChild(spanNombre)
-  elementoLista.appendChild(inputNombre)
-  elementoLista.appendChild(espacio)
+  elementoLista.append(spanNombre)
+  elementoLista.append(inputNombre)
+  elementoLista.append(espacio)
   } 
